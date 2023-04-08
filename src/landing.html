@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/3104/3104133.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <title>HOME</title>
+  </head>
+  <body>
+    <div
+      class="h-screen bg-hero bg-no-repeat bg-cover bg-start m:bg-center bg-fixed"
+    >
+      <!-- Nav Container -->
+      <nav class="container mx-auto p-6">
+        <!-- Flex Container for All Items -->
+        <div class="flex items-center justify-between">
+          <!-- Flex Container for Logo and Menu -->
+          <div
+            class="flex items-center space-x-60 xl:space-x-96 2xl:space-x-[500px]"
+          >
+            <!-- Logo -->
+            <a href="#" class="text-light text-3xl font-bold">SafeChat</a>
+            <!-- Left Menu -->
+            <div class="hidden space-x-8 text-lg lg:flex">
+              <a
+                href="#"
+                class="hover:text-lightGray font-semibold tracking-wider text-light"
+              >
+                Home
+              </a>
+              <a
+                href="#"
+                class="font-semibold tracking-wider text-light hover:text-lightGray"
+              >
+                Features
+              </a>
+              <a
+                href="#"
+                class="font-semibold tracking-wider text-light hover:text-lightGray"
+              >
+                Feedback
+              </a>
+              <a
+                href="#"
+                class="font-semibold tracking-wider text-light hover:text-lightGray"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Buttons Menu -->
+
+          <!-- ? This Buttons will get hidden when user has logged in -->
+          <!-- TODO Toggle/Put the lg:hidden class for below div to hide login/signup buttons-->
+          <div
+            class="hidden lg:flex items-center space-x-6 text-lg text-light"
+          >
+            <div class="hover:text-lightGray font-semibold tracking-wider">
+              <a href="login.html">
+                Login
+              </a>
+            </div>
+            <!-- <a
+              href="#"
+              class="px-8 py-2 text-lightGray border-[1px] border-secondary rounded-full hover:opacity-70"
+              >Sign Up</a
+            > -->
+
+            <a
+              href="signup.html"
+              class="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-full group"
+            >
+              <span
+                class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-secondary opacity-[3%]"
+              ></span>
+              <span
+                class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-secondary opacity-100 group-hover:-translate-x-8"
+              ></span>
+              <span
+                class="relative w-full text-left text-white font-semibold tracking-wider transition-colors duration-200 ease-in-out group-hover:text-gray-900"
+                >SignUp</span
+              >
+              <span
+                class="absolute inset-0 border-2 border-secondary rounded-full"
+              ></span>
+            </a>
+          </div>
+
+          <!-- TODO To show the profile lg:remove hidden class from the below div -->
+          <div class="hidden lg:hidden justify-between items-center">
+            <p class="tracking-widest text-light">Welcome, Username</p>
+            <img class="w-14 h-auto" src="Images/arrow.png" alt="img" />
+          </div>
+
+          <!-- Hamburger Menu -->
+          <button
+            id="menu-btn"
+            class="block hamburger lg:hidden focus:outline-none"
+            type="button"
+          >
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+        id="menu"
+        class="absolute hidden p-6 rounded-lg bg-zinc-800 left-6 right-6 top-20 z-100"
+        >
+        <div
+        class="flex items-center justify-center flex-col w-full space-y-6 font-bold text-white rounded-sm"
+        >
+
+        <!-- TODO Remove hidden class and put flex to below div to hide the profile when not logged in-->
+        <div class="w-full hidden flex-col lg:hidden justify-between items-center space-y-4 pb-6 border-b border-gray-400">
+          <p class="tracking-widest text-light">Welcome, Username</p>
+          <img class="w-14 h-auto" src="Images/arrow.png" alt="img" />
+        </div>
+
+            <a href="#" class="w-full text-center">Home</a>
+            <a href="#" class="w-full text-center">Featuress</a>
+            <a href="#" class="w-full text-center">Feedback</a>
+            <a href="#" class="w-full text-center">Contact Us</a>
+
+            <!-- TODO toggle hidden class to hide this login/signup buttons while logged in -->
+            <div class="w-full flex flex-col space-y-6">
+              <a href="#" class="w-full text-center pt-6 border-t border-gray-400"
+                >Login</a
+              >
+
+              <a
+                href="#"
+                class="w-full text-center py-3 rounded-full text-black bg-secondary"
+                >Signup</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="h-screen mx-16 flex flex-col justify-center items-end">
+        <div class="flex flex-col justify-center items-center">
+          <h1 class="text-5xl lg:text-7xl text-light font-extrabold leading-2">
+            Provides Secured  <br />
+            Communication <br />
+            for Every Mission
+          </h1>
+          <div class="self-start my-10">
+            <a
+              href="login.html"
+              class="relative inline-flex items-center justify-start inline-block px-12 py-3 overflow-hidden font-bold rounded-full group"
+            >
+              <span
+                class="w-40 h-32 rotate-45 translate-x-8 -translate-y-2 absolute left-0 top-0 bg-secondry opacity-[3%]"
+              ></span>
+              <span
+                class="absolute top-0 left-0 w-56 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-64 -translate-y-24 bg-secondary opacity-100 group-hover:-translate-x-8"
+              ></span>
+              <span
+                class="relative w-full text-left text-white font-semibold tracking-wider transition-colors duration-200 ease-in-out group-hover:text-gray-900"
+                >Get Started</span
+              >
+              <span
+                class="absolute inset-0 border-2 border-secondary rounded-full"
+              ></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="h-screen bg-light">
+      <!-- Heading -->
+
+      <div class="w-full flex flex-col items-center">
+        <h1 class="text-6xl text-dark font-bold mt-16 text-center">
+          Features
+        </h1>
+        <p
+          class="text-sm lg:text-base text-lightGray tracking-widest leading-4 mt-3"
+        >
+          Privacy, security, decentralized, perfect.
+        </p>
+      </div>
+
+
+
+
+    </div>
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JS FILE -->
+    <script src="script.js"></script>
+  </body>
+</html>
