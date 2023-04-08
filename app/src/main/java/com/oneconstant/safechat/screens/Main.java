@@ -32,7 +32,7 @@ public class Main extends AppCompatActivity {
         mBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, new Home()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, new Translate()).commit();
         BadgeDrawable badgeDrawable = mBinding.bottomNavigation.getOrCreateBadge(R.id.chat);
         badgeDrawable.setVisible(true);
         badgeDrawable.setNumber(8);
