@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <item android:id="@+id/home"-->
+<!--        android:icon="@drawable/home_icon_selector"-->
+<!--        android:enabled="true"-->
+<!--        android:title="Home"/>-->
+    <item
+        android:id="@+id/translate"
+        android:icon="@drawable/ic_translate"
+        android:enabled="true"
+        android:title="Translate"/>
+    <item
+        android:id="@+id/chat"
+        android:icon="@drawable/ic_chat"
+        android:enabled="true"
+        android:title="Chat"/>
+<!--    <item-->
+<!--        android:id="@+id/profile"-->
+<!--        android:icon="@drawable/ic_user_nav"-->
+<!--        android:enabled="true"-->
+<!--        android:title="Profile"/>-->
+</menu>

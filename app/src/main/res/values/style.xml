@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/navselections</item>
+        <item name="android:titleMargin">20dp</item>
+    </style>
+
+    <style name="Widget.BottomNavigationView"
+        parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

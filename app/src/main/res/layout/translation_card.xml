@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@drawable/translate_text_background"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Hindi"
+            android:textColor="@color/white"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_voice"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_copy"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_share"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="नमस्ते, मुझे आपराधिक रिकॉर्ड चाहिए। कृपया इसे अत्यावश्यक आधार पर भेजें।"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="18sp"/>
+
+</LinearLayout>
