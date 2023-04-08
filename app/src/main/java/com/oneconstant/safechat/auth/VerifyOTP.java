@@ -30,7 +30,7 @@ public class VerifyOTP extends AppCompatActivity {
                 startActivity(new Intent(VerifyOTP.this, Main.class));
                 finish();
             }
-            else {
+            else if (mBinding.input1.getText().toString() == "" && mBinding.input2.getText().toString() == "" && mBinding.input3.getText().toString() == "" && mBinding.input4.getText().toString() == "" && mBinding.input5.getText().toString() == "" && mBinding.input6.getText().toString() == "")  {
                 Toast.makeText(this, "Invalid OTP", Toast.LENGTH_SHORT).show();
             }
         });

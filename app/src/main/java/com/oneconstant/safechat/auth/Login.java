@@ -53,7 +53,7 @@ public class Login extends AppCompatActivity {
                 startActivity(new Intent(Login.this, VerifyOTP.class));
                 finish();
             }
-            else {
+            else if(mBinding.aadharTxt.getText().toString() == "") {
                 Toast.makeText(this, "Invalid Aadhar Number", Toast.LENGTH_SHORT).show();
             }
         });
