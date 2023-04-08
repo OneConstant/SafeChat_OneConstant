@@ -8,6 +8,7 @@ import android.os.Handler;
 
 import com.oneconstant.safechat.R;
 import com.oneconstant.safechat.auth.Login;
+import com.oneconstant.safechat.screens.fragments.Home;
 
 public class Splash extends AppCompatActivity {
 

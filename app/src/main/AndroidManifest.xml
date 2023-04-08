@@ -15,24 +15,23 @@
         android:theme="@style/Theme.SafeChat"
         tools:targetApi="31">
         <activity
+            android:name=".VerifyOTP"
+            android:exported="false" />
+        <activity
             android:name=".screens.Splash"
-            android:exported="true" >
-
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".screens.Main"
             android:exported="true" />
         <activity
             android:name=".auth.Login"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
 
         <service
             android:name=".chat.MessagingService"
