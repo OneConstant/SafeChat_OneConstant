@@ -27,7 +27,7 @@ public class VerifyOTP extends AppCompatActivity {
 
         mBinding.nextBtn.setOnClickListener(v -> {
             if (mBinding.input1.getText().toString() != "" && mBinding.input2.getText().toString() != "" && mBinding.input3.getText().toString() != "" && mBinding.input4.getText().toString() != "" && mBinding.input5.getText().toString() != "" && mBinding.input6.getText().toString() != "") {
-                startActivity(new Intent(VerifyOTP.this, Main.class));
+                startActivity(new Intent(VerifyOTP.this, FingerID.class));
                 finish();
             }
             else if (mBinding.input1.getText().toString() == "" && mBinding.input2.getText().toString() == "" && mBinding.input3.getText().toString() == "" && mBinding.input4.getText().toString() == "" && mBinding.input5.getText().toString() == "" && mBinding.input6.getText().toString() == "")  {

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -19,9 +20,12 @@ import android.widget.Toast;
 import com.google.common.base.Verify;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.oneconstant.safechat.R;
+import com.oneconstant.safechat.aes.EncryptionUtil;
 import com.oneconstant.safechat.databinding.ActivityMainBinding;
 import com.oneconstant.safechat.databinding.ActivityLoginBinding;
 import com.oneconstant.safechat.screens.Main;
+
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.concurrent.Executor;
@@ -49,6 +53,14 @@ public class Login extends AppCompatActivity {
         word2.setSpan(new ForegroundColorSpan(ContextCompat.getColor(getApplicationContext(), R.color.yellow)), 0, word.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         mBinding.appName.append(word2);
         mBinding.nextBtn.setOnClickListener(v -> {
+//            String res = EncryptionUtil.fileToMD5("C:\\Users\\Prachi S Jamdade\\AndroidStudioProjects\\SafeChat\\app\\src\\main\\java\\com\\oneconstant\\safechat\\abc.txt");
+            Log.d("MD5", "Hi");
+
+            String requestBody = "{ \"aadhaarNumber\": \"206750023609\"}";
+            String url = "https://api.emptra.com/aadhaarVerification/requestOtp";
+            String json = new AadharVerification().makeCall(url, requestBody);
+            Log.d("api_call_json", json.toString());
+
             if(mBinding.aadharTxt.getText().toString() != "") {
                 startActivity(new Intent(Login.this, VerifyOTP.class));
                 finish();
@@ -59,30 +71,30 @@ public class Login extends AppCompatActivity {
         });
 
         executor = ContextCompat.getMainExecutor(this);
-//        biometricPrompt = new BiometricPrompt(Login.this, executor, new BiometricPrompt.AuthenticationCallback() {
-//            @Override
-//            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
-//                super.onAuthenticationError(errorCode, errString);
-////                mBinding.authStatusTV.setText("Authentication Canceled");
-//                Toast.makeText(Login.this, "Authentication Error: " + errString, Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
-//                super.onAuthenticationSucceeded(result);
-////                mBinding.authStatusTV.setText("Authentication Succeed...!");
-//                Toast.makeText(Login.this, "Authentication Succeed...!", Toast.LENGTH_SHORT).show();
-//                addDataToFirestore();
-//                startActivity(new Intent(Login.this, Main.class));
-//            }
-//
-//            @Override
-//            public void onAuthenticationFailed() {
-//                super.onAuthenticationFailed();
-////                mBinding.authStatusTV.setText("Authentication Failed...!");
-//                Toast.makeText(Login.this, "Authentication Failed...!", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        biometricPrompt = new BiometricPrompt(Login.this, executor, new BiometricPrompt.AuthenticationCallback() {
+            @Override
+            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
+                super.onAuthenticationError(errorCode, errString);
+//                mBinding.authStatusTV.setText("Authentication Canceled");
+                Toast.makeText(Login.this, "Authentication Error: " + errString, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
+                super.onAuthenticationSucceeded(result);
+//                mBinding.authStatusTV.setText("Authentication Succeed...!");
+                Toast.makeText(Login.this, "Authentication Succeed...!", Toast.LENGTH_SHORT).show();
+                addDataToFirestore();
+                startActivity(new Intent(Login.this, Main.class));
+            }
+
+            @Override
+            public void onAuthenticationFailed() {
+                super.onAuthenticationFailed();
+//                mBinding.authStatusTV.setText("Authentication Failed...!");
+                Toast.makeText(Login.this, "Authentication Failed...!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         promptInfo = new BiometricPrompt.PromptInfo.Builder()
                 .setTitle("Biometric Authentication")
@@ -109,4 +121,5 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), exception.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
+
 }

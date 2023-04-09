@@ -15,6 +15,9 @@
         android:theme="@style/Theme.SafeChat"
         tools:targetApi="31">
         <activity
+            android:name=".FaceID"
+            android:exported="false" />
+        <activity
             android:name=".auth.FingerID"
             android:exported="false" />
         <activity

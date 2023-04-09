@@ -78,6 +78,26 @@
         android:letterSpacing="0.05"
         />
 
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginTxt"
+        android:text="Put your finger to verify its you"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/montserrat_medium"/>
 
+    <ImageView
+        android:id="@+id/fingerId"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_fingerprint"
+        android:layout_marginTop="80dp"
+        android:layout_below="@id/txt2"
+        android:background="@drawable/translate_text_background"
+        />
 
 </RelativeLayout>
